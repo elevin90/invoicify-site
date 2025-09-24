@@ -1,0 +1,69 @@
+{
+  "meta": {
+    "title": "Politique de confidentialité",
+    "app": "Invoicify",
+    "version": "v1.3",
+    "updated": "Mis à jour : 2025-09-26"
+  },
+  "intro": {
+    "title": "1. Introduction",
+    "paragraphs": [
+      "Invoicify (\"l’App\") respecte votre vie privée. Cette politique explique les données que nous collectons, comment nous les utilisons et vos droits."
+    ]
+  },
+  "dataCollection": {
+    "title": "2. Collecte et utilisation des données",
+    "paragraphs": [
+      "<strong>2.1 Données utilisateur (CloudKit/iCloud) :</strong> Vos factures et informations clients sont stockées en privé dans votre iCloud via CloudKit. Vous seul y avez accès. Nous n’y avons pas accès.",
+      "<strong>2.2 Analyses et rapports de crash (Firebase) :</strong> Nous utilisons Google Firebase pour l’analytique de base et les rapports d’incident. Voir les <a href=\"https://policies.google.com/privacy\" target=\"_blank\" rel=\"noopener\">Règles de confidentialité de Google</a>.",
+      "<strong>2.3 Abonnements (StoreKit) :</strong> Les paiements sont traités par Apple. Nous ne stockons pas les données de paiement. Voir la <a href=\"https://www.apple.com/legal/privacy/\" target=\"_blank\" rel=\"noopener\">Politique de confidentialité d’Apple</a>."
+    ]
+  },
+  "sharing": {
+    "title": "3. Partage des données",
+    "paragraphs": [
+      "Nous ne vendons, ne louons ni ne partageons vos données personnelles avec des tiers. Les données résident sur votre appareil et dans votre compte iCloud."
+    ]
+  },
+  "retention": {
+    "title": "4. Conservation et suppression des données",
+    "list": [
+      "Supprimer l’application (supprime les données locales).",
+      "Supprimer les données de l’app d’iCloud dans les réglages Apple.",
+      "Utiliser l’option « Réinitialiser les données » dans les réglages de l’app."
+    ]
+  },
+  "rights": {
+    "title": "5. Vos droits (RGPD)",
+    "list": [
+      "Accès, rectification, effacement.",
+      "Limitation du traitement et opposition.",
+      "Portabilité des données.",
+      "Droit d’introduire une réclamation auprès de l’autorité compétente."
+    ],
+    "paragraphs": [
+      "Bases légales : exécution du contrat (fourniture de l’app), intérêt légitime (fiabilité, prévention de la fraude) et consentement lorsque applicable (p. ex. bascules d’analyse)."
+    ]
+  },
+  "changes": {
+    "title": "6. Modifications de cette politique",
+    "paragraphs": [
+      "Des mises à jour peuvent intervenir ; la dernière version est disponible dans l’app et sur cette page."
+    ]
+  },
+  "contact": {
+    "title": "7. Contact",
+    "paragraphs": [
+      "Des questions ? <a href=\"mailto:yauhenilevin90@gmail.com\">yauhenilevin90@gmail.com</a>"
+    ]
+  },
+  "technical": [
+    "Stockage : Apple CloudKit (base privée par identifiant Apple).",
+    "Analyses/Crash : Firebase (agrégé/diagnostique).",
+    "Abonnements : StoreKit 2 (paiements gérés par Apple)."
+  ],
+  "labels": {
+    "technicalSummary": "Résumé technique"
+  }
+}
+

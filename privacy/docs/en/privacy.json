@@ -1,0 +1,66 @@
+{
+  "meta": {
+    "title": "Privacy Policy",
+    "app": "Invoicify",
+    "version": "v1.3",
+    "updated": "Updated: 2025-09-26"
+  },
+  "intro": {
+    "title": "1. Introduction",
+    "paragraphs": [
+      "Invoicify (\"the App\") respects your privacy. This policy explains what data we collect, how we use it, and your rights."
+    ]
+  },
+  "dataCollection": {
+    "title": "2. Data Collection and Usage",
+    "paragraphs": [
+      "<strong>2.1 User Data (CloudKit/iCloud):</strong> Your invoices and client info are stored privately in your Apple iCloud via CloudKit. Only you can access this data. We cannot access it.",
+      "<strong>2.2 Analytics & Crash Reporting (Firebase):</strong> We use Google Firebase for basic analytics and crash reports. See <a href=\"https://policies.google.com/privacy\" target=\"_blank\" rel=\"noopener\">Google’s Privacy Policy</a>.",
+      "<strong>2.3 Subscriptions (StoreKit):</strong> Payments are processed by Apple. We do not store payment details. See <a href=\"https://www.apple.com/legal/privacy/\" target=\"_blank\" rel=\"noopener\">Apple’s Privacy Policy</a>."
+    ]
+  },
+  "sharing": {
+    "title": "3. Data Sharing",
+    "paragraphs": [
+      "We do not sell, rent, or share your personal data with third parties. Data lives on your device and in your iCloud account."
+    ]
+  },
+  "retention": {
+    "title": "4. Data Retention & Deletion",
+    "list": [
+      "Delete the app (removes local data).",
+      "Remove app data from iCloud in Apple settings.",
+      "Use “Reset Data” in the app settings."
+    ]
+  },
+  "rights": {
+    "title": "5. Your Rights (GDPR)",
+    "list": [
+      "Access, rectification, deletion (erasure).",
+      "Restriction and objection to processing.",
+      "Data portability.",
+      "Right to lodge a complaint with your local authority."
+    ],
+    "paragraphs": [
+      "Legal bases: performance of contract (providing the app), legitimate interests (app reliability, fraud prevention), and consent where applicable (e.g., analytics toggles)."
+    ]
+  },
+  "changes": {
+    "title": "6. Changes to this Policy",
+    "paragraphs": ["We may update this policy; the latest version will always be available in the App and on this page."]
+  },
+  "contact": {
+    "title": "7. Contact",
+    "paragraphs": [
+      "Questions? <a href=\"mailto:yauhenilevin90@gmail.com\">yauhenilevin90@gmail.com</a>"
+    ]
+  },
+  "technical": [
+    "Storage: Apple CloudKit (private database per Apple ID).",
+    "Analytics/Crashes: Firebase (aggregated/diagnostic).",
+    "Subscriptions: StoreKit 2 (Apple handles payments)."
+  ],
+  "labels": {
+    "technicalSummary": "Technical summary"
+  }
+}

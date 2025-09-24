@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Terms of Use — Invoicify</title>
+  <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@2/css/pico.min.css">
+
+  <style>
+    :root{
+      /* единые размеры контейнера как на index/faq/privacy */
+      --layout-max: 980px;
+      --layout-x: 20px;
+      --rail-width: 210px;
+
+      --accent:#0a84ff;
+      --bg:#fff; --fg:#111; --muted:#58606b;
+      --card:#f7f7f8; --border:#e5e7eb;
+    }
+    @media (max-width:640px){ :root{ --rail-width:180px } }
+    @media (prefers-color-scheme: dark){
+      :root{ --bg:#0b0b0d; --fg:#eaeaea; --muted:#b7b7b7; --card:#141418; --border:#26262b; --accent:#4da3ff }
+    }
+
+    /* без прыжков и с фоном до низа страницы */
+    html{ scrollbar-gutter: stable; background:var(--bg); color:var(--fg) }
+    body{
+      min-height: 100dvh;              /* тянем фон ниже первого экрана */
+      display:flex; flex-direction:column;
+      background:var(--bg); color:var(--fg);
+    }
+
+    /* === критический CSS для <site-header> (как на FAQ/Privacy) === */
+    site-header{ display:block }
+    site-header .sh{
+      max-width: var(--layout-max);
+      margin-inline:auto;
+      padding-inline: var(--layout-x);
+    }
+    site-header .grid-rail{
+      display:grid;
+      grid-template-columns:1fr minmax(var(--rail-width), max-content);
+      align-items:start; gap:0 24px; padding-top:1rem;
+    }
+    site-header nav ul{ margin:0; padding:0; list-style:none }
+    site-header nav li::marker{ content:none }
+    site-header .brand{
+      font-size:clamp(24px,3.2vw,40px);
+      line-height:1.1; letter-spacing:-.01em; font-weight:800;
+      color:var(--accent); text-decoration:none;
+    }
+    site-header .nav-right{
+      grid-column:2; justify-self:start; display:flex; gap:1rem; align-items:center;
+      white-space:nowrap;
+    }
+    site-header .nav-right a{ color:var(--accent); text-decoration:none; font-weight:600 }
+    site-header .nav-right a:hover{ text-decoration:underline }
+    /* === /критический CSS === */
+
+    /* Контент — тот же контейнер, что у шапки */
+    .content{
+      max-width: var(--layout-max);
+      margin-inline:auto;
+      padding-inline: var(--layout-x);
+      padding-block:16px 80px;
+      width:100%;
+    }
+
+    /* Заголовок и мета */
+    h1{
+      font-size:clamp(28px,4.2vw,48px);
+      line-height:1.1; letter-spacing:-.01em; font-weight:800;
+      margin:6px 0 8px;
+    }
+    .meta{ color:var(--muted); margin:0 0 22px; font-size:.95rem }
+
+    /* Левая колонка текста: прижата к левому краю контейнера */
+    .legal{
+      max-width: 860px;
+      margin: 0 0 64px 0; /* слева 0 — выравниваем с h1/краями контейнера */
+    }
+
+    .legal h2{ margin-top:1.6rem; font-size:clamp(20px,2.2vw,24px) }
+    .legal p, .legal li{ line-height:1.75; font-size:1.02rem }
+    .legal ul{ padding-left:1.15rem }
+
+    a{ color:var(--accent) }
+
+    footer.content{
+      margin-top:auto; padding-top:16px;
+      color:var(--muted); border-top:1px solid var(--border)
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Хедер с фолбэком (идентичен другим страницам) -->
+  <site-header base="./" current="terms">
+    <div class="sh">
+      <nav class="grid-rail">
+        <ul><li><a class="brand" href="./">Invoicify</a></li></ul>
+        <ul class="nav-right">
+          <li><a data-key="faq" href="faq.html">FAQ</a></li>
+          <li><a data-key="privacy" href="privacy/privacy.html">Privacy</a></li>
+          <li><a data-key="terms" href="terms.html" aria-current="page">Terms</a></li>
+        </ul>
+      </nav>
+    </div>
+  </site-header>
+
+  <main class="content">
+    <article class="legal">
+      <h1>Terms of Use</h1>
+      <p class="meta">Last updated: <time datetime="2025-09-25">September 25, 2025</time></p>
+
+      <p>These terms and conditions govern your use of the Invoicify application (“the App”). By downloading, installing, or using the App, you agree to be bound by these terms and conditions:</p>
+
+      <h2 id="license">License</h2>
+      <p>The App is licensed, not sold, to you for use solely in accordance with these terms. You may use the App only for your personal or internal business purposes.</p>
+
+      <h2 id="iap">In-App Purchases</h2>
+      <p>The App may offer in-app purchases, such as subscriptions, which provide additional features or content. By making an in-app purchase, you agree to pay the specified fees and abide by the terms of the purchase (including App Store policies).</p>
+
+      <h2 id="privacy">Data Storage and Privacy</h2>
+      <p>The App stores user data exclusively on the user’s iCloud account and devices. The developer does not have access to user data. Your use of the App is also subject to our <a href="privacy/privacy.html">Privacy Policy</a>, which explains how your information is handled.</p>
+
+      <h2 id="restrictions">Restrictions</h2>
+      <p>You may not:</p>
+      <ul>
+        <li>Copy, modify, distribute, sell, or lease any part of the App;</li>
+        <li>Attempt to reverse engineer, decompile, or disassemble the App;</li>
+        <li>Use the App in any way that violates applicable laws or regulations;</li>
+        <li>Use the App to engage in fraudulent or illegal activities;</li>
+        <li>Use the App in a manner that could damage, disable, overburden, or impair the App;</li>
+        <li>Remove or alter any copyright, trademark, or other proprietary rights notices from the App.</li>
+      </ul>
+
+      <h2 id="third-party">Third-Party Content</h2>
+      <p>The App uses Lottie animations that are subject to the Lottie Simple License. These animations are provided by third-party creators, and their use within the App complies with the applicable licensing terms.</p>
+
+      <h2 id="warranty">Disclaimer of Warranties</h2>
+      <p>The App is provided on an “as is” and “as available” basis, without warranties of any kind, express or implied. We do not warrant that the App will be error-free or uninterrupted, or that any defects will be corrected.</p>
+
+      <h2 id="liability">Limitation of Liability</h2>
+      <p>Under no circumstances shall we be liable for any direct, indirect, incidental, special, or consequential damages arising out of or in any way connected with your use of the App.</p>
+
+      <h2 id="law">Governing Law</h2>
+      <p>These terms and conditions shall be governed by and construed in accordance with the laws of your jurisdiction, without regard to conflict-of-law provisions.</p>
+    </article>
+  </main>
+
+  <footer class="content">
+    <small>© <span id="year"></span> Invoicify</small>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+  <script type="module" src="assets/js/site-components.js"></script>
+</body>
+</html>

@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FAQ — Common Questions</title>
+  <meta name="description" content="Common questions and answers about the app: clients, services, documents, company info, data removal, subscription benefits." />
+  <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@2/css/pico.min.css">
+
+  <style>
+    :root{
+      /* ДОЛЖНО совпадать на всех страницах и в site-header */
+      --layout-max: 980px;
+      --layout-x: 20px;
+      --rail-width: 210px;
+
+      --accent:#0a84ff;
+      --bg:#fff; --fg:#111; --muted:#58606b;
+      --card:#f7f7f8; --border:#e5e7eb;
+    }
+    @media (max-width:640px){ :root{ --rail-width: 180px; } }
+    @media (prefers-color-scheme: dark){
+      :root{ --bg:#0b0b0d; --fg:#eaeaea; --muted:#b7b7b7; --card:#141418; --border:#26262b; --accent:#4da3ff; }
+    }
+
+    /* фиксируем место под вертикальный скроллбар — без «прыжка» */
+    html{ scrollbar-gutter: stable; }
+
+    /* === КРИТИЧЕСКИЙ CSS ДЛЯ site-header (как в компоненте) === */
+    site-header{ display:block }
+    site-header .sh{
+      max-width: var(--layout-max);
+      margin-inline: auto;
+      padding-inline: var(--layout-x);
+    }
+    site-header .grid-rail{
+      display:grid; grid-template-columns:1fr var(--rail-width);
+      align-items:start; gap:0 24px; padding-top:1rem;
+    }
+    site-header nav ul{ margin:0; padding:0; list-style:none }
+    site-header nav li::marker{ content:none }
+    site-header .brand{
+      font-size: clamp(24px, 3.2vw, 40px);
+      line-height:1.1; letter-spacing:-.01em; font-weight:800;
+      color: var(--accent); text-decoration:none;
+    }
+    site-header .nav-right{
+      grid-column:2; justify-self:start; display:flex; gap:1rem; align-items:center;
+    }
+    site-header .nav-right a{ color: var(--accent); text-decoration:none; font-weight:600; }
+    site-header .nav-right a:hover{ text-decoration:underline }
+    /* === /КРИТИЧЕСКИЙ CSS === */
+  
+    /* без прыжков и с фоном до низа страницы */
+    html{ scrollbar-gutter: stable; background:var(--bg); color:var(--fg) }
+    body{
+      min-height: 100dvh;              /* тянем фон ниже первого экрана */
+      display:flex; flex-direction:column;
+      background:var(--bg); color:var(--fg);
+    }
+
+    /* Контент — те же края, что и у шапки */
+    .content{
+      max-width: var(--layout-max);
+      margin-inline:auto;
+      padding-inline: var(--layout-x);
+      padding-block:16px 80px;
+      width:100%;
+    }
+
+    /* Титул/лид */
+    h1{
+      font-size: clamp(28px,4.2vw,48px);
+      line-height:1.1; letter-spacing:-.01em; font-weight:800;
+      margin:6px 0 8px;
+    }
+    .lead{ color:var(--muted); margin:0 0 22px }
+
+    /* Пилюли */
+    .pills{ display:flex; flex-wrap:wrap; gap:12px; margin:6px 0 26px }
+    .chip{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:10px 16px; font-size:14px; line-height:1; font-weight:600;
+      color:var(--accent);
+      border:1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+      border-radius:9999px;
+      background:color-mix(in srgb, var(--accent) 6%, transparent);
+      text-decoration:none; transition:.15s border-color,.15s background-color,.06s transform;
+      user-select:none;
+    }
+    .chip:hover{
+      background:color-mix(in srgb, var(--accent) 12%, transparent);
+      border-color:color-mix(in srgb, var(--accent) 60%, transparent);
+    }
+    .chip:active{ transform:translateY(1px) }
+
+    /* FAQ карточки (как на Policy) */
+    .faq{ display:grid; gap:16px }
+    details.faq-item{
+      background:var(--card); border:1px solid var(--border);
+      border-radius:16px; padding:0; overflow:clip;
+    }
+    details.faq-item[open]{ box-shadow:0 8px 30px rgba(0,0,0,.06) }
+    details.faq-item > summary{
+      list-style:none; cursor:pointer; padding:22px 24px;
+      display:flex; gap:14px; align-items:flex-start; font-weight:700; font-size:18px;
+      -webkit-tap-highlight-color: transparent;
+    }
+    details.faq-item > summary::-webkit-details-marker{ display:none }
+    .qmark{
+      flex:0 0 auto; width:24px; height:24px; translate:0 2px;
+      border-radius:999px; background:var(--accent); color:#fff;
+      display:grid; place-items:center; font-size:14px; font-weight:700;
+    }
+    details.faq-item > summary::after{
+      content:"▸"; margin-left:auto; opacity:.55;
+      transform: translateY(2px) rotate(0deg); transition: transform .15s, opacity .15s;
+    }
+    details.faq-item[open] > summary::after{ transform: translateY(2px) rotate(90deg); opacity:.8 }
+
+    .answer{ padding:0 24px 22px }
+    .answer p{ margin:0 0 12px }
+    .kbd{ font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; background:var(--border); color:var(--fg); padding:.1em .45em; border-radius:6px }
+
+    footer.content{ margin-top:auto; padding-top:16px; color:var(--muted); border-top:1px solid var(--border) }
+  </style>
+</head>
+<body>
+
+  <!-- Шапка (фолбэк соответствует разметке компонента) -->
+  <site-header base="./" current="faq">
+    <div class="sh">
+      <nav class="grid-rail">
+        <ul><li><a class="brand" href="./">Invoicify</a></li></ul>
+        <ul class="nav-right">
+          <li><a data-key="faq" href="faq.html">FAQ</a></li>
+          <li><a data-key="privacy" href="privacy/privacy.html">Privacy</a></li>
+          <li><a data-key="terms" href="terms.html">Terms</a></li>
+        </ul>
+      </nav>
+    </div>
+  </site-header>
+
+  <main class="content">
+    <header>
+      <h1>Common Questions</h1>
+      <p class="lead">Quick answers about clients, services, documents, company info, data removal, and subscription perks.</p>
+
+      <nav class="pills" aria-label="On this page">
+        <a class="chip" href="#q-client">Create a client</a>
+        <a class="chip" href="#q-service">Create a service</a>
+        <a class="chip" href="#q-document">Create a document</a>
+        <a class="chip" href="#q-company">Company info</a>
+        <a class="chip" href="#q-delete-one">Remove an item</a>
+        <a class="chip" href="#q-delete-all">Remove all data</a>
+        <a class="chip" href="#q-subscription">Subscription benefits</a>
+      </nav>
+    </header>
+
+    <section class="faq">
+      <details id="q-client" class="faq-item" open>
+        <summary><span class="qmark">Q</span>How to create a client?</summary>
+        <div class="answer">
+          <p>Provide the client’s details or pick one from your phonebook. Required fields are marked with the <span aria-label="asterisk">*</span> symbol.</p>
+        </div>
+      </details>
+
+      <details id="q-service" class="faq-item">
+        <summary><span class="qmark">Q</span>How to create a service?</summary>
+        <div class="answer">
+          <p>Enter the service details. Required fields are marked with the <span aria-label="asterisk">*</span> symbol.</p>
+        </div>
+      </details>
+
+      <details id="q-document" class="faq-item">
+        <summary><span class="qmark">Q</span>How to create a new document?</summary>
+        <div class="answer">
+          <p>On the <span class="kbd">Documents</span> tab, tap <span class="kbd">Create New Invoice</span>. If you have a template for a specific customer/service, choose it; otherwise select <span class="kbd">New Invoice</span> to start from scratch.</p>
+          <p>Set the document date, payment terms, payment method, and primary language. After selecting a customer and at least one service, you can create, save, and/or share the document. Subscribers can also use templates for faster creation.</p>
+        </div>
+      </details>
+
+      <details id="q-company" class="faq-item">
+        <summary><span class="qmark">Q</span>How to change/add my company's information?</summary>
+        <div class="answer">
+          <p>On the <span class="kbd">Documents</span> tab, use the information icon to update or add company details.</p>
+        </div>
+      </details>
+
+      <details id="q-delete-one" class="faq-item">
+        <summary><span class="qmark">Q</span>How to remove a particular document, client, or service?</summary>
+        <div class="answer">
+          <p>Swipe the item and confirm deletion by selecting <span class="kbd">Yes</span> in the alert.</p>
+        </div>
+      </details>
+
+      <details id="q-delete-all" class="faq-item">
+        <summary><span class="qmark">Q</span>How to remove all of my application's data?</summary>
+        <div class="answer">
+          <p>Go to the <span class="kbd">Settings</span> tab and tap <span class="kbd">Remove account</span>.</p>
+        </div>
+      </details>
+
+      <details id="q-subscription" class="faq-item">
+        <summary><span class="qmark">Q</span>What are the benefits of using the app with a subscription?</summary>
+        <div class="answer">
+          <p>Subscription unlocks all premium features, including creating and storing an unlimited number of invoices each month.</p>
+        </div>
+      </details>
+    </section>
+
+    <p class="footer-note" style="color:var(--muted); margin-top:24px;">
+      Still stuck or have a feature request? <strong>Contact:</strong>
+      <a href="mailto:yauhenilevin90@gmail.com">yauhenilevin90@gmail.com</a>
+    </p>
+  </main>
+
+  <footer class="content">
+    <small>© <span id="year"></span> Invoicify</small>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+  <script type="module" src="assets/js/site-components.js"></script>
+</body>
+</html>

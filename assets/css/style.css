@@ -1,0 +1,66 @@
+:root {
+    --rail-width: 210px;   /* было 140px → +50% */
+    --gap-between: 12px;   /* кнопка ↕ картинка */
+    --gap-top: 2px;        /* FAQ ↕ кнопка — ближе к меню */
+  }
+
+  /* Страница */
+  html, body { height: 100%; }
+  body { min-height: 100vh; display: flex; flex-direction: column; }
+  footer.container { margin-top: auto; }
+
+  /* ОДНА сетка для nav и секции ниже */
+  .grid-rail {
+    display: grid;
+    grid-template-columns: 1fr var(--rail-width);
+    align-items: start;
+    gap: 0 24px;
+    padding-top: 1rem;
+  }
+
+  /* NAV */
+  nav.grid-rail ul { margin: 0; padding: 0; list-style: none; }
+  nav.grid-rail ul:first-child { grid-column: 1; }
+  nav.grid-rail .nav-right {
+    grid-column: 2;
+    justify-self: start;
+    display: flex; gap: 1rem; align-items: center;
+  }
+
+  /* Правая колонка */
+  .rail-stack {
+    grid-column: 2;
+    display: flex; flex-direction: column; align-items: flex-start;
+    margin-top: var(--gap-top);          /* ближе к FAQ */
+  }
+
+  /* Кнопка */
+  .apple-btn{
+    display:inline-flex; align-items:center; justify-content:center;
+    padding:6px 12px; border-radius:9999px;
+    background:#0071e3; color:#fff !important; text-decoration:none;
+    font-weight:600; line-height:1; border:1px solid transparent;
+    transition: background-color .2s, box-shadow .2s, transform .06s;
+    box-shadow:0 1px 2px rgba(0,0,0,.08), 0 4px 12px rgba(0,0,0,.12);
+    white-space:nowrap; font-size:.90rem;
+    margin-bottom: var(--gap-between);
+  }
+  .apple-btn:hover{ background:#0077ed; box-shadow:0 2px 8px rgba(0,0,0,.18); transform:translateY(-1px); }
+  .apple-btn:active{ transform:translateY(0); box-shadow:0 1px 3px rgba(0,0,0,.14); }
+  .apple-btn:focus-visible{ outline:none; box-shadow:0 0 0 3px rgba(0,113,227,.35); }
+
+  /* Картинка — без тени и без скруглений, строгая ширина */
+  .device{
+    width: var(--rail-width);
+    height: auto;
+    display:block;
+    filter:none;            /* тень убрана */
+    border-radius:0;        /* скругление убрано */
+  }
+
+  /* Мобилка (по желанию) */
+  @media (max-width: 640px) {
+    :root { --rail-width: 180px; } /* чуть компактнее на узких */
+    .grid-rail { grid-template-columns: 1fr var(--rail-width); justify-items: center; }
+    nav.grid-rail .nav-right { justify-self: center; }
+  }

@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Invoicify — Simple invoicing app</title>
+  <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@2/css/pico.min.css">
+
+  <style>
+    :root{
+      /* ЕДИНЫЕ размеры контейнера для всех страниц и хедера */
+      --layout-max: 980px;
+      --layout-x: 20px;
+
+      --rail-width: 210px;
+      --gap-top: 2px;
+      --gap-between: 12px;
+      --accent:#0a84ff;
+    }
+
+    /* фиксируем место под вертикальный скроллбар — без «прыжка» при переходах */
+    html{ scrollbar-gutter: stable; }
+
+    /* === КРИТИЧЕСКИЙ CSS ДЛЯ site-header (идентичен стилям компонента) === */
+    site-header{ display:block }
+    site-header .sh{
+      max-width: var(--layout-max);
+      margin-inline: auto;
+      padding-inline: var(--layout-x);
+    }
+    site-header .grid-rail{
+      display:grid; grid-template-columns:1fr var(--rail-width);
+      align-items:start; gap:0 24px; padding-top:1rem;
+    }
+    site-header nav ul{ margin:0; padding:0; list-style:none }
+    site-header nav li::marker{ content:none }
+    site-header .brand{
+      font-size: clamp(24px, 3.2vw, 40px);
+      line-height:1.1; letter-spacing:-.01em; font-weight:800;
+      color: var(--accent); text-decoration:none;
+    }
+    site-header .nav-right{
+      grid-column:2; justify-self:start; display:flex; gap:1rem; align-items:center;
+    }
+    site-header .nav-right a{
+      color: var(--accent); text-decoration:none; font-weight:600;
+    }
+    site-header .nav-right a:hover{ text-decoration:underline }
+    @media (max-width:640px){
+      :root{ --rail-width: 180px; }
+      site-header .grid-rail{ grid-template-columns:1fr var(--rail-width) }
+      site-header .nav-right{ justify-self:center }
+    }
+    /* === / КРИТИЧЕСКИЙ CSS === */
+
+    /* База страницы */
+    html, body{ height:100% }
+    body{ margin:0; min-height:100vh; display:flex; flex-direction:column; }
+
+    /* Универсальный контейнер контента — те же размеры, что и у шапки */
+    .page-wrap{
+      max-width: var(--layout-max);
+      margin-inline: auto;
+      padding-inline: var(--layout-x);
+      width:100%;
+    }
+
+    /* Сетка контента (синхронизирована с header .grid-rail) */
+    .grid-rail{
+      display:grid;
+      grid-template-columns: 1fr var(--rail-width);
+      align-items:start;
+      gap:0 24px;
+      padding-top:1rem;
+    }
+
+    /* ЛЕВАЯ КОЛОНКА */
+    .features-col{ grid-column:1; margin-top:.25rem; }
+    .eyebrow{ margin:0 0 .5rem; font-size:.9rem; opacity:.8; }
+    .features{ list-style:none; margin:0; padding:0; display:grid; gap:10px; }
+    .feature{ display:flex; gap:12px; align-items:flex-start; }
+    .feature .ico{
+      flex:0 0 26px; width:26px; height:26px;
+      border-radius:999px; background:var(--accent);
+      color:#fff; display:grid; place-items:center; font-weight:700;
+      line-height:1; font-size:16px; translate:0 2px; user-select:none;
+    }
+    .feature p{ margin:0; }
+
+    /* ПРАВАЯ КОЛОНКА */
+    .rail-stack{
+      grid-column:2;
+      display:flex; flex-direction:column; align-items:flex-start;
+      margin-top:var(--gap-top);
+    }
+    .apple-btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:6px 12px; border-radius:9999px;
+      background:#0071e3; color:#fff !important; text-decoration:none;
+      font-weight:600; line-height:1; border:1px solid transparent;
+      transition: background-color .2s, box-shadow .2s, transform .06s;
+      box-shadow:0 1px 2px rgba(0,0,0,.08), 0 4px 12px rgba(0,0,0,.12);
+      white-space:nowrap; font-size:.90rem;
+      margin:-38px 0 12px;   /* «поджатие» как просил */
+    }
+    .apple-btn:hover{ background:#0077ed; box-shadow:0 2px 8px rgba(0,0,0,.18); transform:translateY(-1px) }
+
+    .device{
+      width:var(--rail-width) !important;
+      height:auto !important;
+      display:block;
+      filter:none !important;
+      border-radius:0 !important;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    footer.page-wrap{ margin-top:auto; padding:16px 0 }
+  </style>
+</head>
+<body>
+
+  <!-- ОДИНАКОВЫЙ ХЕДЕР (фолбэк размётки совпадает с итоговой) -->
+  <site-header base="./" current="home">
+    <div class="sh">
+      <nav class="grid-rail">
+        <ul><li><a class="brand" href="./">Invoicify</a></li></ul>
+        <ul class="nav-right">
+          <li><a data-key="faq" href="faq.html">FAQ</a></li>
+          <li><a data-key="privacy" href="privacy/privacy.html">Privacy</a></li>
+          <li><a data-key="terms" href="terms.html">Terms</a></li>
+        </ul>
+      </nav>
+    </div>
+  </site-header>
+
+  <section class="page-wrap grid-rail">
+    <div class="features-col" aria-labelledby="features-title">
+      <p id="features-title" class="eyebrow">The app allows you to:</p>
+      <ul class="features">
+        <li class="feature"><span class="ico" aria-hidden="true">✓</span><p>Generate invoices with additional language support in just a few taps.</p></li>
+        <li class="feature"><span class="ico" aria-hidden="true">✓</span><p>Save and store invoice templates to simplify future creation, ensuring consistency and saving you time.</p></li>
+        <li class="feature"><span class="ico" aria-hidden="true">✓</span><p>Keep a comprehensive record of all your invoices and access them whenever you need.</p></li>
+        <li class="feature"><span class="ico" aria-hidden="true">✓</span><p>Visualize your earnings and expenses through intuitive charts.</p></li>
+        <li class="feature"><span class="ico" aria-hidden="true">✓</span><p>Efficiently store and manage essential client information.</p></li>
+        <li class="feature"><span class="ico" aria-hidden="true">✓</span><p>Organize your services for quick and easy access.</p></li>
+        <li class="feature"><span class="ico" aria-hidden="true">✓</span><p>Secure login with password or Face/Touch ID.</p></li>
+      </ul>
+    </div>
+
+    <div class="rail-stack">
+      <a class="apple-btn" href="https://apps.apple.com/pl/app/invoicify/id6739201580">Download app</a>
+      <img class="device" src="./images/iphone-mockup@2x.png" alt="Invoicify — main screen">
+    </div>
+  </section>
+
+  <footer class="page-wrap">
+    <small>© <span id="year"></span> Invoicify</small>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+  <script type="module" src="assets/js/site-components.js"></script>
+</body>
+</html>

@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Privacy Policy – Invoicify</title>
+  <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@2/css/pico.min.css" />
+
+  <style>
+    :root{
+      /* единые токены как на главной/FAQ */
+      --layout-max: 980px;
+      --layout-x: 20px;
+      --rail-width: 210px;
+      --accent:#0a84ff;
+
+      --bg:#fff; --fg:#111; --muted:#58606b;
+      --card:#fff; --border:#e5e7eb;
+      --shadow: 0 8px 30px rgba(0,0,0,.06);
+    }
+    @media (max-width:640px){ :root{ --rail-width: 180px; } }
+    @media (prefers-color-scheme: dark){
+      :root{ --bg:#0b0b0d; --fg:#eaeaea; --muted:#b7b7b7; --card:#141418; --border:#26262b; --accent:#4da3ff; }
+    }
+
+    /* фикс позиции контента при появлении скроллбара */
+    html{ scrollbar-gutter: stable; }
+
+    /* ===== критический CSS для <site-header> (как на index/faq) ===== */
+    site-header{ display:block }
+    site-header .sh{
+      max-width: var(--layout-max);
+      margin-inline: auto;
+      padding-inline: var(--layout-x);
+    }
+    site-header .grid-rail{
+      display:grid; grid-template-columns:1fr var(--rail-width);
+      align-items:start; gap:0 24px; padding-top:1rem;
+    }
+    site-header nav ul{ margin:0; padding:0; list-style:none }
+    site-header nav li::marker{ content:none }
+    site-header .brand{
+      font-size: clamp(24px, 3.2vw, 40px);
+      line-height:1.1; letter-spacing:-.01em; font-weight:800;
+      color:var(--accent); text-decoration:none;
+    }
+    site-header .nav-right{
+      grid-column:2; justify-self:start; display:flex; gap:1rem; align-items:center;
+    }
+    site-header .nav-right a{ color:var(--accent); text-decoration:none; font-weight:600 }
+    site-header .nav-right a:hover{ text-decoration:underline }
+    /* ===== /критический CSS ===== */
+
+  /* без прыжков и с фоном до низа страницы */
+    html{ scrollbar-gutter: stable; background:var(--bg); color:var(--fg) }
+    body{
+      min-height: 100dvh;              /* тянем фон ниже первого экрана */
+      display:flex; flex-direction:column;
+      background:var(--bg); color:var(--fg);
+    }
+
+    /* Контент совпадает по ширине с шапкой */
+    .content{
+      max-width: var(--layout-max);
+      margin-inline:auto;
+      padding-inline: var(--layout-x);
+      padding-block: 16px 80px;
+      width:100%;
+    }
+
+    /* Карточка политики */
+    .card{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:24px;
+      box-shadow: var(--shadow);
+    }
+    .stack > * + *{ margin-top:16px }
+
+    /* Заголовки */
+    h1{
+      font-size: clamp(28px,4.2vw,48px);
+      line-height:1.1; letter-spacing:-.01em; font-weight:800;
+      margin:6px 0 8px;
+    }
+    .muted{ color:var(--muted) }
+
+    /* Хлебные крошки + селектор языка */
+    nav.breadcrumbs{ font-size:.9rem; margin:6px 0 12px; color:var(--muted) }
+    nav.breadcrumbs a{ text-decoration:none; color:inherit }
+    nav.breadcrumbs .sep{ opacity:.5; margin:0 4px }
+    .lang-switch{ margin:12px 0 24px }
+    .visually-hidden{ position:absolute; left:-9999px }
+
+    details{ margin-top:8px }
+    footer.content{ margin-top:auto; padding-top:16px; color:var(--muted) }
+  </style>
+</head>
+<body>
+
+  <!-- единый хедер с фолбэком без CLS -->
+  <site-header base="../" current="privacy">
+    <div class="sh">
+      <nav class="grid-rail">
+        <ul><li><a class="brand" href="../">Invoicify</a></li></ul>
+        <ul class="nav-right">
+          <li><a data-key="faq" href="../faq.html">FAQ</a></li>
+          <li><a data-key="privacy" href="./privacy.html" aria-current="page">Privacy</a></li>
+          <li><a data-key="terms" href="../terms.html">Terms</a></li>
+        </ul>
+      </nav>
+    </div>
+  </site-header>
+
+  <main class="content">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <span id="t-breadcrumb">Privacy Policy</span>
+    </nav>
+
+    <div class="lang-switch">
+      <label for="lang" class="visually-hidden">Language</label>
+      <select id="lang">
+        <option value="en">English</option>
+        <option value="pl">Polski</option>
+        <option value="de">Deutsch</option>
+        <option value="fr">Français</option>
+        <option value="pt">Português</option>
+        <option value="ru">Русский</option>
+        <option value="tr">Türkçe</option>
+        <option value="uk">Українська</option>
+      </select>
+    </div>
+
+    <article class="card stack" id="policy">
+      <header>
+        <h1 id="title">Privacy Policy</h1>
+        <div class="muted" id="meta"></div>
+      </header>
+
+      <!-- секции заполняются из JSON -->
+      <section id="intro"></section>
+      <section id="data-collection"></section>
+      <section id="sharing"></section>
+      <section id="retention"></section>
+      <section id="rights"></section>
+      <section id="changes"></section>
+      <section id="contact"></section>
+
+      <details>
+        <summary id="technical-summary">Technical summary</summary>
+        <ul id="tech-list"></ul>
+      </details>
+    </article>
+  </main>
+
+  <footer class="content">
+    <small>© <span id="year"></span> Invoicify</small>
+  </footer>
+
+  <script>
+    const SUPPORTED = ["en","pl","de","fr","pt","ru","tr","uk"];
+    const FALLBACK = "en";
+
+    function getQueryLang(){ const p=new URLSearchParams(location.search); return p.get("lang"); }
+    function detectLang(){
+      const q=getQueryLang(); if(q && SUPPORTED.includes(q)) return q;
+      const navs=[navigator.language,...(navigator.languages||[])].filter(Boolean).map(x=>x.toLowerCase());
+      for(const n of navs){ const base=n.split("-")[0]; if(SUPPORTED.includes(base)) return base; }
+      return FALLBACK;
+    }
+
+    async function loadPolicy(lang){
+      // sync select + url
+      const sel=document.getElementById("lang"); sel.value=lang;
+      const url=new URL(location.href); url.searchParams.set("lang",lang); history.replaceState({}, "", url);
+
+      const res=await fetch(`./docs/${lang}/privacy.json`, { cache:"no-store" });
+      if(!res.ok){ if(lang!==FALLBACK) return loadPolicy(FALLBACK); throw new Error(`Cannot load ./docs/${lang}/privacy.json`); }
+      const t=await res.json();
+
+      document.documentElement.lang=lang;
+      document.title=`${t.meta?.title||"Privacy Policy"} – Invoicify`;
+      document.getElementById("t-breadcrumb").textContent=t.meta?.title||"Privacy Policy";
+      document.getElementById("title").textContent=t.meta?.title||"Privacy Policy";
+      document.getElementById("meta").textContent=
+        `${t.meta?.app||"Invoicify"} • ${t.meta?.version||""} • ${t.meta?.updated||""}`.replace(/\s•\s$/,"");
+      document.getElementById("year").textContent=new Date().getFullYear();
+
+      const render=(id,section)=>{
+        const el=document.getElementById(id); if(!el || !section) return;
+        el.innerHTML="";
+        if(section.title){ const h2=document.createElement("h2"); h2.textContent=section.title; el.appendChild(h2); }
+        (section.paragraphs||[]).forEach(p=>{ const para=document.createElement("p"); para.innerHTML=p; el.appendChild(para); });
+        if(section.list?.length){ const ul=document.createElement("ul"); section.list.forEach(item=>{ const li=document.createElement("li"); li.innerHTML=item; ul.appendChild(li); }); el.appendChild(ul); }
+      };
+
+      render("intro", t.intro);
+      render("data-collection", t.dataCollection);
+      render("sharing", t.sharing);
+      render("retention", t.retention);
+      render("rights", t.rights);
+      render("changes", t.changes);
+      render("contact", t.contact);
+
+      const techList=document.getElementById("tech-list"); techList.innerHTML="";
+      (t.technical||[]).forEach(x=>{ const li=document.createElement("li"); li.innerHTML=x; techList.appendChild(li); });
+      document.getElementById("technical-summary").textContent=t.labels?.technicalSummary||"Technical summary";
+    }
+
+    loadPolicy(detectLang()).catch(err=>{
+      console.error(err);
+      document.getElementById("policy").insertAdjacentHTML("beforeend",
+        '<p class="muted">Failed to load content. Check that <code>privacy/docs/&lt;lang&gt;/privacy.json</code> exists and paths are correct.</p>');
+    });
+
+    document.getElementById("lang").addEventListener("change", e=>loadPolicy(e.target.value));
+  </script>
+
+  <!-- общий компонент шапки -->
+  <script type="module" src="../assets/js/site-components.js"></script>
+</body>
+</html>

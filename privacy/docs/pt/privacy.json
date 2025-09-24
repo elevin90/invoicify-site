@@ -1,0 +1,69 @@
+{
+  "meta": {
+    "title": "Política de Privacidade",
+    "app": "Invoicify",
+    "version": "v1.3",
+    "updated": "Atualizado: 2025-09-26"
+  },
+  "intro": {
+    "title": "1. Introdução",
+    "paragraphs": [
+      "O Invoicify (\"App\") respeita a sua privacidade. Esta política explica quais dados coletamos, como os usamos e quais são os seus direitos."
+    ]
+  },
+  "dataCollection": {
+    "title": "2. Coleta e uso de dados",
+    "paragraphs": [
+      "<strong>2.1 Dados do usuário (CloudKit/iCloud):</strong> Suas faturas e informações de clientes são armazenadas de forma privada no seu iCloud via CloudKit. Apenas você tem acesso. Nós não temos acesso.",
+      "<strong>2.2 Análises e relatórios de falhas (Firebase):</strong> Usamos o Google Firebase para análises básicas e relatórios de falhas. Consulte a <a href=\"https://policies.google.com/privacy\" target=\"_blank\" rel=\"noopener\">Política de Privacidade do Google</a>.",
+      "<strong>2.3 Assinaturas (StoreKit):</strong> Os pagamentos são processados pela Apple. Não armazenamos detalhes de pagamento. Consulte a <a href=\"https://www.apple.com/legal/privacy/\" target=\"_blank\" rel=\"noopener\">Política de Privacidade da Apple</a>."
+    ]
+  },
+  "sharing": {
+    "title": "3. Compartilhamento de dados",
+    "paragraphs": [
+      "Não vendemos, alugamos nem compartilhamos seus dados pessoais com terceiros. Os dados ficam no seu dispositivo e na sua conta iCloud."
+    ]
+  },
+  "retention": {
+    "title": "4. Retenção e exclusão de dados",
+    "list": [
+      "Excluir o app (remove os dados locais).",
+      "Remover os dados do app do iCloud nas configurações da Apple.",
+      "Usar a opção “Redefinir dados” nas configurações do app."
+    ]
+  },
+  "rights": {
+    "title": "5. Seus direitos (RGPD)",
+    "list": [
+      "Acesso, retificação, eliminação (direito ao apagamento).",
+      "Restrição do processamento e objeção.",
+      "Portabilidade dos dados.",
+      "Direito de apresentar reclamação à autoridade local."
+    ],
+    "paragraphs": [
+      "Bases legais: execução do contrato (fornecimento do app), interesse legítimo (confiabilidade, prevenção de fraude) e consentimento quando aplicável (ex.: alternância de análises)."
+    ]
+  },
+  "changes": {
+    "title": "6. Alterações desta política",
+    "paragraphs": [
+      "Podemos atualizar esta política; a versão mais recente estará disponível no app e nesta página."
+    ]
+  },
+  "contact": {
+    "title": "7. Contato",
+    "paragraphs": [
+      "Dúvidas? <a href=\"mailto:yauhenilevin90@gmail.com\">yauhenilevin90@gmail.com</a>"
+    ]
+  },
+  "technical": [
+    "Armazenamento: Apple CloudKit (banco privado por Apple ID).",
+    "Análises/Falhas: Firebase (agregado/diagnóstico).",
+    "Assinaturas: StoreKit 2 (pagamentos pela Apple)."
+  ],
+  "labels": {
+    "technicalSummary": "Resumo técnico"
+  }
+}
+

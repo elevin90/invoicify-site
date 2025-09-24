@@ -1,0 +1,69 @@
+{
+  "meta": {
+    "title": "Polityka prywatności",
+    "app": "Invoicify",
+    "version": "v1.3",
+    "updated": "Zaktualizowano: 2025-09-26"
+  },
+  "intro": {
+    "title": "1. Wprowadzenie",
+    "paragraphs": [
+      "Invoicify (\"Aplikacja\") szanuje Twoją prywatność. Niniejsza polityka wyjaśnia, jakie dane zbieramy, jak je wykorzystujemy oraz jakie masz prawa."
+    ]
+  },
+  "dataCollection": {
+    "title": "2. Zbieranie i wykorzystanie danych",
+    "paragraphs": [
+      "<strong>2.1 Dane użytkownika (CloudKit/iCloud):</strong> Faktury i dane klientów są przechowywane prywatnie w Twoim iCloud (CloudKit). Dostęp masz wyłącznie Ty. My nie mamy do nich dostępu.",
+      "<strong>2.2 Analityka i raportowanie awarii (Firebase):</strong> Używamy Google Firebase do podstawowej analityki i raportów awarii. Zobacz <a href=\"https://policies.google.com/privacy\" target=\"_blank\" rel=\"noopener\">Politykę prywatności Google</a>.",
+      "<strong>2.3 Subskrypcje (StoreKit):</strong> Płatności są przetwarzane przez Apple. Nie przechowujemy danych płatniczych. Zobacz <a href=\"https://www.apple.com/legal/privacy/\" target=\"_blank\" rel=\"noopener\">Politykę prywatności Apple</a>."
+    ]
+  },
+  "sharing": {
+    "title": "3. Udostępnianie danych",
+    "paragraphs": [
+      "Nie sprzedajemy, nie wynajmujemy ani nie udostępniamy Twoich danych osobowych podmiotom trzecim. Dane znajdują się na Twoim urządzeniu i na koncie iCloud."
+    ]
+  },
+  "retention": {
+    "title": "4. Przechowywanie i usuwanie danych",
+    "list": [
+      "Usuń aplikację (usuwa dane lokalne).",
+      "Usuń dane aplikacji z iCloud w ustawieniach Apple.",
+      "Użyj opcji „Reset danych” w ustawieniach aplikacji."
+    ]
+  },
+  "rights": {
+    "title": "5. Twoje prawa (RODO)",
+    "list": [
+      "Dostęp, sprostowanie, usunięcie (prawo do bycia zapomnianym).",
+      "Ograniczenie przetwarzania i sprzeciw.",
+      "Przenoszenie danych.",
+      "Prawo wniesienia skargi do lokalnego organu nadzorczego."
+    ],
+    "paragraphs": [
+      "Podstawy prawne: wykonanie umowy (świadczenie usług aplikacji), uzasadniony interes (niezawodność, zapobieganie nadużyciom) oraz zgoda tam, gdzie ma zastosowanie (np. przełączniki analityki)."
+    ]
+  },
+  "changes": {
+    "title": "6. Zmiany w polityce",
+    "paragraphs": [
+      "Polityka może być aktualizowana; najnowsza wersja będzie dostępna w aplikacji i na tej stronie."
+    ]
+  },
+  "contact": {
+    "title": "7. Kontakt",
+    "paragraphs": [
+      "Pytania? <a href=\"mailto:yauhenilevin90@gmail.com\">yauhenilevin90@gmail.com</a>"
+    ]
+  },
+  "technical": [
+    "Przechowywanie: Apple CloudKit (prywatna baza dla Apple ID).",
+    "Analityka/Awarie: Firebase (zbiorcze/diagnostyczne).",
+    "Subskrypcje: StoreKit 2 (płatności obsługuje Apple)."
+  ],
+  "labels": {
+    "technicalSummary": "Podsumowanie techniczne"
+  }
+}
+

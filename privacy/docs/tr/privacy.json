@@ -1,0 +1,69 @@
+{
+  "meta": {
+    "title": "Gizlilik Politikası",
+    "app": "Invoicify",
+    "version": "v1.3",
+    "updated": "Güncellendi: 2025-09-26"
+  },
+  "intro": {
+    "title": "1. Giriş",
+    "paragraphs": [
+      "Invoicify (\"Uygulama\") gizliliğinize saygı duyar. Bu politika hangi verileri topladığımızı, nasıl kullandığımızı ve haklarınızı açıklar."
+    ]
+  },
+  "dataCollection": {
+    "title": "2. Veri toplama ve kullanım",
+    "paragraphs": [
+      "<strong>2.1 Kullanıcı Verileri (CloudKit/iCloud):</strong> Faturalarınız ve müşteri bilgileriniz CloudKit aracılığıyla iCloud hesabınızda özel olarak saklanır. Bu verilere yalnızca siz erişebilirsiniz. Biz erişemeyiz.",
+      "<strong>2.2 Analiz ve çökme raporları (Firebase):</strong> Temel analiz ve çökme raporları için Google Firebase kullanıyoruz. Bkz. <a href=\"https://policies.google.com/privacy\" target=\"_blank\" rel=\"noopener\">Google’ın Gizlilik Politikası</a>.",
+      "<strong>2.3 Abonelikler (StoreKit):</strong> Ödemeler Apple tarafından işlenir. Ödeme bilgilerini saklamıyoruz. Bkz. <a href=\"https://www.apple.com/legal/privacy/\" target=\"_blank\" rel=\"noopener\">Apple’ın Gizlilik Politikası</a>."
+    ]
+  },
+  "sharing": {
+    "title": "3. Verilerin paylaşımı",
+    "paragraphs": [
+      "Kişisel verilerinizi üçüncü taraflarla satmayız, kiralamayız veya paylaşmayız. Veriler cihazınızda ve iCloud hesabınızda bulunur."
+    ]
+  },
+  "retention": {
+    "title": "4. Veri saklama ve silme",
+    "list": [
+      "Uygulamayı silin (yerel verileri kaldırır).",
+      "Apple ayarlarından iCloud’daki uygulama verilerini kaldırın.",
+      "Uygulama ayarlarında “Verileri sıfırla” seçeneğini kullanın."
+    ]
+  },
+  "rights": {
+    "title": "5. Haklarınız (GDPR)",
+    "list": [
+      "Erişim, düzeltme, silme (unutulma hakkı).",
+      "İşlemenin kısıtlanması ve itiraz.",
+      "Veri taşınabilirliği.",
+      "Yetkili otoriteye şikâyet hakkı."
+    ],
+    "paragraphs": [
+      "Hukuki dayanaklar: sözleşmenin ifası (uygulamanın sağlanması), meşru menfaat (güvenilirlik, sahtekârlığın önlenmesi) ve uygun olduğunda açık rıza (örn. analiz anahtarları)."
+    ]
+  },
+  "changes": {
+    "title": "6. Bu politikadaki değişiklikler",
+    "paragraphs": [
+      "Politika güncellenebilir; en güncel sürüm uygulamada ve bu sayfada bulunur."
+    ]
+  },
+  "contact": {
+    "title": "7. İletişim",
+    "paragraphs": [
+      "Sorularınız mı var? <a href=\"mailto:yauhenilevin90@gmail.com\">yauhenilevin90@gmail.com</a>"
+    ]
+  },
+  "technical": [
+    "Depolama: Apple CloudKit (her Apple ID için özel veritabanı).",
+    "Analiz/Çökme: Firebase (toplu/teşhis amaçlı).",
+    "Abonelikler: StoreKit 2 (ödemeler Apple tarafından)."
+  ],
+  "labels": {
+    "technicalSummary": "Teknik özet"
+  }
+}
+

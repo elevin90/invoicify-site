@@ -1,0 +1,69 @@
+{
+  "meta": {
+    "title": "Datenschutzerklärung",
+    "app": "Invoicify",
+    "version": "v1.3",
+    "updated": "Aktualisiert: 2025-09-26"
+  },
+  "intro": {
+    "title": "1. Einleitung",
+    "paragraphs": [
+      "Invoicify (\"die App\") respektiert Ihre Privatsphäre. Diese Erklärung erläutert, welche Daten wir erheben, wie wir sie verwenden und welche Rechte Sie haben."
+    ]
+  },
+  "dataCollection": {
+    "title": "2. Datenerhebung und -nutzung",
+    "paragraphs": [
+      "<strong>2.1 Nutzerdaten (CloudKit/iCloud):</strong> Ihre Rechnungen und Kundendaten werden privat in Ihrem Apple-iCloud-Konto über CloudKit gespeichert. Nur Sie haben Zugriff. Wir haben keinen Zugriff.",
+      "<strong>2.2 Analyse & Absturzberichte (Firebase):</strong> Wir verwenden Google Firebase für grundlegende Analysen und Crash-Reports. Siehe <a href=\"https://policies.google.com/privacy\" target=\"_blank\" rel=\"noopener\">Googles Datenschutzrichtlinie</a>.",
+      "<strong>2.3 Abonnements (StoreKit):</strong> Zahlungen werden von Apple verarbeitet. Wir speichern keine Zahlungsdetails. Siehe <a href=\"https://www.apple.com/legal/privacy/\" target=\"_blank\" rel=\"noopener\">Apples Datenschutzrichtlinie</a>."
+    ]
+  },
+  "sharing": {
+    "title": "3. Weitergabe von Daten",
+    "paragraphs": [
+      "Wir verkaufen, vermieten oder teilen Ihre personenbezogenen Daten nicht mit Dritten. Die Daten verbleiben auf Ihrem Gerät und in Ihrem iCloud-Konto."
+    ]
+  },
+  "retention": {
+    "title": "4. Aufbewahrung & Löschung",
+    "list": [
+      "App löschen (entfernt lokale Daten).",
+      "App-Daten in den Apple-Einstellungen aus iCloud entfernen.",
+      "Option „Daten zurücksetzen“ in den App-Einstellungen verwenden."
+    ]
+  },
+  "rights": {
+    "title": "5. Ihre Rechte (DSGVO)",
+    "list": [
+      "Auskunft, Berichtigung, Löschung.",
+      "Einschränkung der Verarbeitung und Widerspruch.",
+      "Datenübertragbarkeit.",
+      "Beschwerderecht bei Ihrer Aufsichtsbehörde."
+    ],
+    "paragraphs": [
+      "Rechtsgrundlagen: Vertragserfüllung (Bereitstellung der App), berechtigtes Interesse (Zuverlässigkeit, Betrugsprävention) sowie Einwilligung, sofern anwendbar (z. B. für Analytik-Schalter)."
+    ]
+  },
+  "changes": {
+    "title": "6. Änderungen dieser Richtlinie",
+    "paragraphs": [
+      "Aktualisierungen sind möglich; die jeweils neueste Fassung ist in der App und auf dieser Seite verfügbar."
+    ]
+  },
+  "contact": {
+    "title": "7. Kontakt",
+    "paragraphs": [
+      "Fragen? <a href=\"mailto:yauhenilevin90@gmail.com\">yauhenilevin90@gmail.com</a>"
+    ]
+  },
+  "technical": [
+    "Speicherung: Apple CloudKit (private Datenbank pro Apple-ID).",
+    "Analytik/Crashes: Firebase (aggregiert/diagnostisch).",
+    "Abos: StoreKit 2 (Zahlungen über Apple)."
+  ],
+  "labels": {
+    "technicalSummary": "Technische Übersicht"
+  }
+}
+
